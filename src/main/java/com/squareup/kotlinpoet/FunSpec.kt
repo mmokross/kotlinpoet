@@ -116,7 +116,7 @@ class FunSpec private constructor(builder: Builder) {
       codeWriter.emitCode("%L", escapeIfKeyword(name))
     }
 
-    parameters.emit(codeWriter) { param ->
+    parameters.emit(codeWriter, wrappable = true) { param ->
       param.emit(codeWriter, includeType = name != SETTER)
     }
 
